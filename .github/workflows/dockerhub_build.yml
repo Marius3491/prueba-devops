@@ -69,19 +69,6 @@ jobs:
             docker compose down --rmi all
             docker compose up -d
 
-  lint:
-    name: Linting with Flake8
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - name: Install dependencies
-        run: |
-          pip install flake8
-      - name: Run Flake8
-        run: |
-          flake8 .
-        continue-on-error: true
-
 # https://github.com/docker/login-action
 # https://github.com/docker/build-push-action
 # https://github.com/appleboy/ssh-action
