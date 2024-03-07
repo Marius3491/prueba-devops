@@ -11,19 +11,6 @@ on:
       - src/**
 
 jobs:
-  lint:
-    name: Linting with Flake8
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - name: Install dependencies
-        run: |
-          pip install flake8
-      - name: Run Flake8
-        run: |
-          flake8 .
-        continue-on-error: true
-
   build:
     name: build and push Docker image
     runs-on: ubuntu-latest
